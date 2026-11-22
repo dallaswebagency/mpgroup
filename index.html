@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MP Group | Janitorial and Building Maintenance in Edmonton, AB</title>
+<meta name="description" content="MP Group provides professional office cleaning and building maintenance in Edmonton, St. Albert, Sherwood Park and Spruce Grove. Call 780-951-0486.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --navy:#0F3154;
+  --navy-deep:#071B30;
+  --amber:#FFB300;
+  --amber-soft:#FFE7A8;
+  --steel:#E9EDF1;
+  --line:#C9D2DB;
+  --ink:#0A1F36;
+  --muted:#4A5D72;
+  --white:#FFFFFF;
+  --font:"Archivo", "Helvetica Neue", Arial, sans-serif;
+  --wrap:1240px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.6;font-variation-settings:"wdth" 100}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--font);margin:0;line-height:1.05;letter-spacing:-.01em}
+.wide{font-variation-settings:"wdth" 118;font-weight:800}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:16px;text-decoration:none;padding:15px 26px;border:2px solid transparent;transition:background .2s,color .2s,border-color .2s}
+.btn-amber{background:var(--amber);color:var(--navy-deep)}
+.btn-amber:hover{background:#FFC633}
+.btn-navy{background:var(--navy);color:var(--white)}
+.btn-navy:hover{background:var(--navy-deep)}
+.btn-line{border-color:var(--navy);color:var(--navy)}
+.btn-line:hover{background:var(--navy);color:var(--white)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;z-index:99;background:var(--amber);padding:8px 14px}
+
+/* utility bar */
+.util{background:var(--navy-deep);color:#C8D4E2;font-size:14px;padding-top:env(safe-area-inset-top,0px)}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;min-height:42px;flex-wrap:wrap}
+.util a{text-decoration:none;color:#fff}
+.util a:hover{color:var(--amber)}
+.util .grp{display:flex;gap:22px;flex-wrap:wrap}
+.util .hrs{color:#9FB1C6}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:40;background:var(--white);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:84px}
+.logo img{height:62px;width:auto}
+.nav{display:flex;align-items:center;gap:6px}
+.nav>a,.nav .dd>button{font:600 16px/1 var(--font);color:var(--ink);text-decoration:none;padding:12px 14px;background:none;border:0;cursor:pointer}
+.nav>a:hover,.nav .dd>button:hover{color:var(--navy);box-shadow:inset 0 -3px 0 var(--amber)}
+.nav>a[aria-current]{box-shadow:inset 0 -3px 0 var(--amber)}
+.dd{position:relative}
+.dd>button::after{content:"";display:inline-block;margin-left:8px;width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-3px) rotate(45deg)}
+.dd-menu{position:absolute;top:100%;left:0;min-width:290px;background:var(--navy);padding:10px 0;display:none;border-top:3px solid var(--amber)}
+.dd:hover .dd-menu,.dd.open .dd-menu,.dd:focus-within .dd-menu{display:block}
+.dd-menu a{display:block;color:#fff;text-decoration:none;padding:11px 22px;font-size:15px}
+.dd-menu a:hover{background:var(--navy-deep);color:var(--amber)}
+.hdr .btn{padding:13px 22px}
+.burger{display:none;background:none;border:2px solid var(--navy);width:46px;height:46px;cursor:pointer;padding:0}
+.burger span{display:block;width:20px;height:2px;background:var(--navy);margin:4px auto}
+
+/* hero */
+.hero{background:var(--steel);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0 auto 0 0;width:14px;background:repeating-linear-gradient(180deg,var(--amber) 0 64px,var(--navy) 64px 70px)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;padding-top:84px;padding-bottom:84px}
+.hero-k{font-size:16px;font-weight:600;color:var(--navy);margin:0 0 22px;display:flex;align-items:center;gap:12px}
+.hero-k::before{content:"";width:34px;height:3px;background:var(--amber)}
+.hero h1{font-size:clamp(40px,5vw,70px);color:var(--navy-deep)}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:34em;margin:26px 0 34px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.areas{margin-top:34px;font-size:15px;color:var(--muted)}
+.areas strong{color:var(--ink)}
+
+/* directory board: the signature piece */
+.board{background:var(--navy-deep);color:var(--amber);padding:14px;box-shadow:0 30px 60px -30px rgba(7,27,48,.6)}
+.board-in{border:1px solid #2A4767;padding:26px 26px 22px;background:
+  repeating-linear-gradient(180deg,rgba(255,255,255,.035) 0 2px,transparent 2px 9px),#0B2440}
+.board-top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4767;padding-bottom:16px;margin-bottom:8px}
+.board-top b{font-variation-settings:"wdth" 125;font-weight:800;font-size:15px;letter-spacing:.16em;color:#fff}
+.bars{display:flex;gap:4px;align-items:flex-end}
+.bars i{display:block;width:6px;background:var(--amber)}
+.bars i:nth-child(1){height:22px}.bars i:nth-child(2){height:16px}.bars i:nth-child(3){height:10px;background:#6E8BAA}
+.board a,.board .row{display:flex;align-items:baseline;gap:10px;text-decoration:none;padding:13px 0;font-variation-settings:"wdth" 82;font-weight:600;font-size:19px;letter-spacing:.07em;text-transform:uppercase;color:var(--amber)}
+.board a .dots,.board .row .dots{flex:1;border-bottom:2px dotted #3D5F84;transform:translateY(-5px)}
+.board a .go{color:#fff;font-size:20px;transition:transform .2s}
+.board a:hover{color:#fff}
+.board a:hover .go{transform:translateX(4px);color:var(--amber)}
+.board .row{color:#D7E1EC;font-size:15px;padding:9px 0}
+.board .row em{font-style:normal;color:#fff}
+.board-sep{border-top:1px solid #2A4767;margin:10px 0 6px}
+
+/* credentials */
+.creds{background:var(--navy);color:#fff}
+.creds .wrap{display:flex;align-items:center;gap:28px;padding-top:26px;padding-bottom:26px;flex-wrap:wrap}
+.creds p{margin:0;font-weight:600;color:#B9C8D9;font-size:15px;max-width:15em;line-height:1.35}
+.creds ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px;flex:1}
+.creds li{border:1px solid #3B5C80;padding:9px 16px;font-size:15px;font-weight:600;white-space:nowrap}
+.creds li b{color:var(--amber);font-variation-settings:"wdth" 118;font-weight:800;margin-right:6px}
+
+/* about */
+.about{padding:110px 0}
+.about .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:80px}
+.about h2{font-size:clamp(34px,3.8vw,54px);color:var(--navy-deep)}
+.about .txt p{color:var(--muted);margin:0 0 18px;max-width:38em}
+.about .txt p:first-child{font-size:20px;color:var(--ink)}
+.tl{margin:36px 0 0;padding:0;list-style:none;border-left:3px solid var(--navy)}
+.tl li{position:relative;padding:0 0 26px 30px}
+.tl li::before{content:"";position:absolute;left:-9px;top:6px;width:15px;height:15px;background:var(--amber);border:3px solid var(--white);outline:2px solid var(--navy)}
+.tl b{display:block;font-variation-settings:"wdth" 118;font-weight:800;font-size:26px;color:var(--navy);line-height:1.1}
+.tl span{color:var(--muted)}
+.about .btn{margin-top:14px}
+
+/* commitments tabs */
+.promise{background:var(--navy-deep);color:#fff;padding:100px 0}
+.promise-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px;flex-wrap:wrap}
+.promise h2{font-size:clamp(32px,3.6vw,50px);max-width:13em}
+.tabs{display:flex;gap:0;border:1px solid #2A4767}
+.tabs button{font:600 15px/1.2 var(--font);background:none;color:#B9C8D9;border:0;padding:14px 20px;cursor:pointer;border-right:1px solid #2A4767}
+.tabs button:last-child{border-right:0}
+.tabs button[aria-selected="true"]{background:var(--amber);color:var(--navy-deep)}
+.tabs button:hover:not([aria-selected="true"]){color:#fff}
+.panel{display:grid;grid-template-columns:1.5fr 1fr;min-height:460px}
+.panel[hidden]{display:none}
+.panel .img{background-size:cover;background-position:center;min-height:340px}
+.panel .body{background:var(--white);color:var(--ink);padding:54px 48px;display:flex;flex-direction:column;justify-content:center;border-top:6px solid var(--amber)}
+.panel h3{font-size:34px;color:var(--navy-deep);margin-bottom:18px}
+.panel p{color:var(--muted);margin:0}
+
+/* services */
+.svc{padding:110px 0 90px}
+.svc-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:56px}
+.svc-head h2{font-size:clamp(40px,5vw,72px);color:var(--navy-deep)}
+.svc-head h3{font-size:22px;color:var(--navy);margin-bottom:10px;font-variation-settings:"wdth" 110;font-weight:700}
+.svc-head p{margin:0;color:var(--muted)}
+.svc-list{border-top:2px solid var(--navy)}
+.svc-row{display:grid;grid-template-columns:300px 1fr auto;gap:44px;align-items:center;padding:30px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.svc-row img{width:300px;height:200px;object-fit:cover;filter:saturate(.9)}
+.svc-row h3{font-size:30px;color:var(--navy-deep);margin-bottom:10px}
+.svc-row p{margin:0;color:var(--muted);max-width:40em}
+.svc-row .plus{width:58px;height:58px;border:2px solid var(--navy);display:grid;place-items:center;font-size:30px;font-weight:300;color:var(--navy);transition:background .2s,color .2s}
+.svc-row:hover .plus{background:var(--amber);border-color:var(--amber);color:var(--navy-deep)}
+.svc-row:hover h3{color:var(--navy)}
+
+/* quote band */
+.quote{background:var(--amber);position:relative;overflow:hidden}
+.quote::after{content:"";position:absolute;right:0;top:0;bottom:0;width:180px;background:repeating-linear-gradient(90deg,var(--navy) 0 26px,transparent 26px 40px);opacity:.92}
+.quote .wrap{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;padding-top:64px;padding-bottom:64px;padding-right:230px}
+.quote small{display:block;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.quote a.tel{display:block;text-decoration:none;font-variation-settings:"wdth" 125;font-weight:900;font-size:clamp(40px,6vw,86px);line-height:1;color:var(--navy-deep);letter-spacing:-.02em}
+.quote p{margin:12px 0 0;font-size:19px;font-weight:600;color:var(--navy-deep)}
+
+/* contact */
+.contact{padding:110px 0;background:var(--steel)}
+.contact .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px}
+.contact h2{font-size:clamp(34px,3.8vw,54px);color:var(--navy-deep);margin-bottom:18px}
+.contact .intro{color:var(--muted);margin:0 0 34px;max-width:28em}
+.dl{margin:0;display:grid;gap:20px}
+.dl div{border-left:3px solid var(--amber);padding-left:16px}
+.dl dt{font-size:14px;color:var(--muted);font-weight:600}
+.dl dd{margin:2px 0 0;font-size:19px;font-weight:600}
+.dl a{text-decoration:none}
+.dl a:hover{color:var(--navy);text-decoration:underline}
+form{background:var(--white);padding:44px;border-top:6px solid var(--navy)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:block;font-size:14px;font-weight:600;margin-bottom:7px;color:var(--ink)}
+input,textarea{width:100%;font:16px/1.4 var(--font);padding:14px 15px;border:1.5px solid var(--line);background:#FAFBFC;color:var(--ink)}
+input:focus,textarea:focus{border-color:var(--navy);outline:none;background:#fff}
+.fld{margin-bottom:18px}
+textarea{min-height:150px;resize:vertical}
+form .btn{border:0;cursor:pointer;font-family:var(--font)}
+
+/* footer */
+.foot{background:var(--navy-deep);color:#B9C8D9;font-size:15px;padding-bottom:env(safe-area-inset-bottom,0px)}
+.foot .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:44px;padding:76px 0 54px}
+.foot img{height:66px;width:auto;margin-bottom:18px}
+.foot h4{color:#fff;font-size:16px;margin:0 0 16px;font-variation-settings:"wdth" 112;font-weight:700}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.foot a{text-decoration:none;color:#D7E1EC}
+.foot a:hover{color:var(--amber)}
+.foot .bot{border-top:1px solid #1E3A5A;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:22px 0 26px;font-size:14px}
+.foot .bot a{color:var(--amber)}
+
+/* mobile call bar */
+.mbar{display:none}
+
+@media (max-width:1080px){
+  .hero .wrap,.about .wrap,.contact .wrap,.svc-head{grid-template-columns:1fr;gap:48px}
+  .foot .top{grid-template-columns:1fr 1fr}
+  .panel{grid-template-columns:1fr}
+  .quote .wrap{grid-template-columns:1fr;padding-right:28px}
+  .quote::after{width:70px}
+  .quote .wrap{padding-right:110px}
+}
+@media (max-width:900px){
+  .nav,.hdr .btn{display:none}
+  .burger{display:block}
+  .hdr.open .nav{display:flex;flex-direction:column;align-items:stretch;position:absolute;top:84px;left:0;right:0;background:#fff;border-bottom:3px solid var(--amber);padding:10px 20px 20px;max-height:calc(100vh - 84px);overflow:auto}
+  .hdr.open .nav .dd-menu{position:static;display:block;min-width:0;background:var(--steel);border-top:0}
+  .hdr.open .nav .dd-menu a{color:var(--ink)}
+  .svc-row{grid-template-columns:1fr;gap:18px}
+  .svc-row img{width:100%;height:auto;aspect-ratio:3/2}
+  .svc-row .plus{display:none}
+  .util .hrs{display:none}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:50;padding-bottom:env(safe-area-inset-bottom,0px);background:var(--navy-deep)}
+  .mbar a{text-align:center;padding:16px;font-weight:700;text-decoration:none;color:#fff}
+  .mbar a+a{background:var(--amber);color:var(--navy-deep)}
+  body{padding-bottom:56px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 20px}
+  .hero .wrap{padding-top:56px;padding-bottom:60px}
+  .hero::before{width:8px}
+  .board a{font-size:16px}
+  .f2{grid-template-columns:1fr}
+  form{padding:28px 22px}
+  .foot .top{grid-template-columns:1fr}
+  .tabs{width:100%;flex-direction:column}
+  .tabs button{border-right:0;border-bottom:1px solid #2A4767;text-align:left}
+  .panel .body{padding:36px 26px}
+  .util .wrap{justify-content:center}
+  .util .grp{gap:14px}
+  .logo img{height:44px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="util">
+  <div class="wrap">
+    <div class="grp">
+      <a href="tel:+17809510486">780-951-0486</a>
+      <a href="tel:+17804450935">780-445-0935</a>
+      <a href="mailto:office@mpgroup.ca">office@mpgroup.ca</a>
+    </div>
+    <span class="hrs">Office hours: Mon to Fri, 09:00 to 17:00</span>
+  </div>
+</div>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="MP Group home"><img src="images/mp-group-logo.png" alt="MP Group" width="400" height="122"></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="http://www.mpgroup.ca/about-us.php">About Us</a>
+      <div class="dd" id="dd">
+        <button type="button" aria-expanded="false" aria-controls="dd-menu" id="ddbtn">Services</button>
+        <div class="dd-menu" id="dd-menu">
+          <a href="http://www.mpgroup.ca/arts.php">Arts, Sports and Entertainment</a>
+          <a href="http://www.mpgroup.ca/commercial.php">Commercial</a>
+          <a href="http://www.mpgroup.ca/public-sector.php">Municipal Buildings</a>
+          <a href="http://www.mpgroup.ca/special-services.php">Special Services</a>
+        </div>
+      </div>
+      <a href="http://www.mpgroup.ca/career.php">Careers</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+    <a class="btn btn-amber" href="http://www.mpgroup.ca/request-a-quote.php">Request a quote</a>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="hero-k">Janitorial and building maintenance in Edmonton since 1994</p>
+      <h1 class="wide">Committed to excellence. Committed to you.</h1>
+      <p class="lead">From recreational facilities and municipal buildings to commercial offices, MP Group keeps Edmonton's buildings clean with green products, certified management standards and a 24/7 emergency line.</p>
+      <div class="ctas">
+        <a class="btn btn-navy" href="http://www.mpgroup.ca/request-a-quote.php">Request a quote</a>
+        <a class="btn btn-line" href="tel:+17809510486">Call 1-780-951-0486</a>
+      </div>
+      <p class="areas"><strong>Serving</strong> Edmonton, St. Albert, Sherwood Park and Spruce Grove</p>
+    </div>
+
+    <aside class="board" aria-label="Services directory">
+      <div class="board-in">
+        <div class="board-top">
+          <b>MP GROUP DIRECTORY</b>
+          <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+        </div>
+        <a href="http://www.mpgroup.ca/arts.php">Arts, Sports &amp; Entertainment<span class="dots"></span><span class="go" aria-hidden="true">+</span></a>
+        <a href="http://www.mpgroup.ca/commercial.php">Commercial<span class="dots"></span><span class="go" aria-hidden="true">+</span></a>
+        <a href="http://www.mpgroup.ca/public-sector.php">Municipal Buildings<span class="dots"></span><span class="go" aria-hidden="true">+</span></a>
+        <a href="http://www.mpgroup.ca/special-services.php">Special Services<span class="dots"></span><span class="go" aria-hidden="true">+</span></a>
+        <a href="http://www.mpgroup.ca/green-promise.php">Our Green Promise<span class="dots"></span><span class="go" aria-hidden="true">+</span></a>
+        <div class="board-sep"></div>
+        <div class="row">Emergency line<span class="dots"></span><em>24/7, holidays included</em></div>
+        <div class="row">Office hours<span class="dots"></span><em>Mon to Fri, 09:00 to 17:00</em></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="creds" aria-label="Certifications and memberships">
+  <div class="wrap">
+    <p>Certified standards we meet or exceed</p>
+    <ul>
+      <li><b>CIMS</b>certified management</li>
+      <li><b>CIMS-GB</b>green building</li>
+      <li><b>COR</b>certified safety</li>
+      <li><b>ACSA</b>member</li>
+      <li><b>ISSA</b>member</li>
+      <li><b>EcoLogo</b>certified products</li>
+    </ul>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <h2 class="wide">A family business, built by people who stay.</h2>
+      <ol class="tl">
+        <li><b>1994</b><span>Founded as a family business</span></li>
+        <li><b>2003</b><span>Incorporated in Alberta</span></li>
+        <li><b>15+ years</b><span>Some of our employees have been with us this long</span></li>
+        <li><b>Today</b><span>Available 24/7, including statutory holidays</span></li>
+      </ol>
+    </div>
+    <div class="txt">
+      <p>MP Group's rapid growth comes from providing excellent caretaking services, a good reputation and a quick response to emergencies.</p>
+      <p>Our success would not be possible without qualified, well trained personnel. Our commitment to health and safety through ACSA membership contributes to high employee retention, and membership in ISSA, the world cleaning industry association, helps us equip our team with leading edge technologies, techniques and processes.</p>
+      <p>To eliminate exposure to chemicals we use green cleaning products and follow WHMIS, stressing the use of SDSs, safe work practices and safe job procedures at all times. We always look for ways to add value to our clients' businesses.</p>
+      <a class="btn btn-line" href="http://www.mpgroup.ca/about-us.php">Learn more about us</a>
+    </div>
+  </div>
+</section>
+
+<section class="promise" aria-labelledby="promise-h">
+  <div class="wrap">
+    <div class="promise-head">
+      <h2 class="wide" id="promise-h">What every MP Group client can count on</h2>
+      <div class="tabs" role="tablist" aria-label="Our commitments">
+        <button role="tab" id="t1" aria-controls="p1" aria-selected="true">Committed to excellence</button>
+        <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">Committed to you</button>
+        <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">Our Green Promise</button>
+      </div>
+    </div>
+    <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
+      <div class="img" style="background-image:url('images/stock-2.jpg')" role="img" aria-label="Business handshake"></div>
+      <div class="body">
+        <h3 class="wide">Committed to excellence</h3>
+        <p>We are committed to delivering the highest standard of service in all our work. From our Green Promise, to our CIMS and CIMS-GB certified management standards, and our COR certified safety standard, we meet or exceed industry standards in all areas. You can trust that you will receive nothing but the best.</p>
+      </div>
+    </div>
+    <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+      <div class="img" style="background-image:url('images/stock-6.jpg');background-position:30% center" role="img" aria-label="24/7 support"></div>
+      <div class="body">
+        <h3 class="wide">Committed to you</h3>
+        <p>Our services are available every day of the year, including weekends and statutory holidays. We are always looking for ways to increase our value to you. With our 24/7 emergency line you can feel confident knowing we have you covered anytime, day or night.</p>
+      </div>
+    </div>
+    <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+      <div class="img" style="background-image:url('images/stock-7.jpg');background-position:70% center" role="img" aria-label="Fresh green leaves"></div>
+      <div class="body">
+        <h3 class="wide">Our Green Promise</h3>
+        <p>We are proud to use only non-toxic EcoLogo certified products that meet or exceed industry standards. All of our products are hand selected based on sustainability and performance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc" id="services">
+  <div class="wrap">
+    <div class="svc-head">
+      <h2 class="wide">Services</h2>
+      <div>
+        <h3>Why choose us</h3>
+        <p>We are committed to excellence and backed by over 20 years of experience. MP Group is sure to exceed your expectations. Our friendly, well trained staff are thorough, and with our 24/7 availability you are in good hands.</p>
+      </div>
+    </div>
+    <div class="svc-list">
+      <a class="svc-row" href="http://www.mpgroup.ca/arts.php">
+        <img src="images/stock-small-1.jpg" alt="Floor scrubbing machine on a commercial floor" width="380" height="253" loading="lazy">
+        <div><h3 class="wide">General Janitorial</h3><p>MP Group has the tools, skills and experience to meet your needs. Our services include, but are not limited to, recreational facilities, municipal buildings, the public sector and commercial buildings.</p></div>
+        <span class="plus" aria-hidden="true">+</span>
+      </a>
+      <a class="svc-row" href="http://www.mpgroup.ca/special-services.php">
+        <img src="images/stock-small-2.jpg" alt="Janitorial cart in a clean lobby" width="380" height="253" loading="lazy">
+        <div><h3 class="wide">Special Services</h3><p>From high dusting and window cleaning to snow removal, we are constantly adding services to best fit all your facility needs.</p></div>
+        <span class="plus" aria-hidden="true">+</span>
+      </a>
+      <a class="svc-row" href="http://www.mpgroup.ca/green-promise.php">
+        <img src="images/stock-small-3.jpg" alt="Green seedling growing from soil" width="380" height="253" loading="lazy">
+        <div><h3 class="wide">Our Green Promise</h3><p>We are proud to use only non-toxic EcoLogo certified products that meet or exceed industry standards. All of our products are hand selected based on sustainability and performance.</p></div>
+        <span class="plus" aria-hidden="true">+</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="quote" aria-label="Get a free quote">
+  <div class="wrap">
+    <div>
+      <small>Get a free quote</small>
+      <a class="tel" href="tel:+17809510486">1-780-951-0486</a>
+      <p>We provide scheduled cleaning services.</p>
+    </div>
+    <a class="btn btn-navy" href="http://www.mpgroup.ca/request-a-quote.php">Request a quote</a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2 class="wide">Keep in touch</h2>
+      <p class="intro">Your questions and feedback are important to us. We are committed to getting back to you within 24 hours.</p>
+      <dl class="dl">
+        <div><dt>Phone</dt><dd><a href="tel:+17809510486">780-951-0486</a> or <a href="tel:+17804450935">780-445-0935</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:office@mpgroup.ca">office@mpgroup.ca</a></dd></div>
+        <div><dt>Office hours</dt><dd>Mon to Fri, 09:00 to 17:00</dd></div>
+      </dl>
+    </div>
+    <form action="#contact" method="post">
+      <div class="f2">
+        <div class="fld"><label for="n">Name</label><input id="n" name="name" autocomplete="name" required></div>
+        <div class="fld"><label for="e">Email</label><input id="e" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="fld"><label for="m">Message</label><textarea id="m" name="message" required></textarea></div>
+      <button class="btn btn-amber" type="submit">Send message</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <img src="images/mp-group-logo-white.png" alt="MP Group" width="400" height="122">
+        <p>Professional office cleaning and building maintenance in Edmonton, St. Albert, Sherwood Park and Spruce Grove.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="index.html">Home</a></li><li><a href="http://www.mpgroup.ca/about-us.php">About Us</a></li><li><a href="http://www.mpgroup.ca/career.php">Careers</a></li><li><a href="#contact">Contact Us</a></li><li><a href="http://www.mpgroup.ca/request-a-quote.php">Request a Quote</a></li></ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="http://www.mpgroup.ca/arts.php">Arts, Sports and Entertainment</a></li><li><a href="http://www.mpgroup.ca/commercial.php">Commercial</a></li><li><a href="http://www.mpgroup.ca/public-sector.php">Municipal Buildings</a></li><li><a href="http://www.mpgroup.ca/special-services.php">Special Services</a></li><li><a href="http://www.mpgroup.ca/green-promise.php">Our Green Promise</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li><a href="tel:+17809510486">780-951-0486</a></li><li><a href="tel:+17804450935">780-445-0935</a></li><li><a href="mailto:office@mpgroup.ca">office@mpgroup.ca</a></li><li>Mon to Fri, 09:00 to 17:00</li><li>24/7 emergency line</li></ul>
+      </div>
+    </div>
+    <div class="bot">
+      <span>© 2026 MP Group. All rights reserved.</span>
+      <span>Design by <a href="https://cleaningdigital.ca/" target="_blank" rel="noopener">Cleaning Digital</a></span>
+    </div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Quick actions">
+  <a href="tel:+17809510486">Call now</a>
+  <a href="http://www.mpgroup.ca/request-a-quote.php">Request a quote</a>
+</nav>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr'),bg=document.getElementById('burger');
+  bg.addEventListener('click',function(){var o=hdr.classList.toggle('open');bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Close menu':'Open menu');});
+  var dd=document.getElementById('dd'),db=document.getElementById('ddbtn');
+  db.addEventListener('click',function(){var o=dd.classList.toggle('open');db.setAttribute('aria-expanded',o);});
+  document.addEventListener('click',function(e){if(!dd.contains(e.target)){dd.classList.remove('open');db.setAttribute('aria-expanded','false');}});
+  document.querySelectorAll('#nav a').forEach(function(a){a.addEventListener('click',function(){hdr.classList.remove('open');bg.setAttribute('aria-expanded','false');});});
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  function sel(t){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});}
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){sel(t);});
+    t.addEventListener('keydown',function(e){var n=null;if(e.key==='ArrowRight'||e.key==='ArrowDown')n=tabs[(i+1)%tabs.length];if(e.key==='ArrowLeft'||e.key==='ArrowUp')n=tabs[(i-1+tabs.length)%tabs.length];if(n){e.preventDefault();sel(n);n.focus();}});
+  });
+})();
+</script>
+</body>
+</html>

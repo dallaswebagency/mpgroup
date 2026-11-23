@@ -115,7 +115,7 @@ h1,h2,h3,h4{font-family:var(--head);font-weight:700;margin:0;line-height:1.02;le
 .about{padding:130px 0 110px}
 .about .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:center}
 .about-img{position:relative}
-.about-img img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:53% center;border-radius:var(--r-lg)}
+.about-img img{width:100%;height:auto;aspect-ratio:4/4.6;object-fit:cover;object-position:center 70%;border-radius:var(--r-lg)}
 .since{position:absolute;right:-28px;bottom:42px;background:var(--navy);color:#fff;border-radius:var(--r-md);padding:24px 28px;box-shadow:0 30px 60px -25px rgba(8,26,46,.6)}
 .since b{display:block;font-family:var(--head);font-size:56px;line-height:1;color:var(--amber);letter-spacing:-.03em}
 .since span{font-size:14px;color:#C6D3E1}
@@ -267,6 +267,10 @@ textarea{min-height:150px;resize:vertical}
   form{padding:28px 20px}
   .foot .top{grid-template-columns:1fr}
   .commit,.contact{padding:90px 0}
+  .hero{min-height:0}
+  .hero-bg{background-image:url('images/hero-mobile.jpg');background-position:center 62%;bottom:auto;height:66vh;height:66svh}
+  .hero::after{background:linear-gradient(180deg,rgba(8,26,46,.5) 0,rgba(8,26,46,.05) 16vh,rgba(8,26,46,.25) 40vh,rgba(8,26,46,.92) 58vh,#081A2E 66vh)}
+  .hero .wrap{padding-top:46vh;padding-top:46svh}
 }
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
@@ -345,7 +349,7 @@ textarea{min-height:150px;resize:vertical}
 <section class="about" id="about">
   <div class="wrap">
     <div class="about-img">
-      <img src="images/lobby-handshake.jpg" alt="MP Group caretaker shaking hands with a facility manager in an office lobby" width="1376" height="640">
+      <img src="images/about-team.jpg" alt="MP Group caretaking team in navy uniforms standing in an office lobby" width="850" height="1024">
       <div class="since"><b>1994</b><span>Family owned and Alberta incorporated</span></div>
     </div>
     <div>
